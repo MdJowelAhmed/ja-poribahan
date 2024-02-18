@@ -38,6 +38,46 @@ function hideElementDisplay(){
         })
        
     }
+
+    // coupon section 
+    const btnApply=document.getElementById('apply');
+    
+    btnApply.addEventListener('click',function(){
+        
+        let totalPrice=parseInt(document.getElementById('total-ticket-price').innerText)
+        const coupon=document.getElementById('coupon').value;
+        if((coupon==="NEW15")){
+
+            const discountPrice=totalPrice*0.15;
+            let grandTotal=totalPrice-discountPrice;
+           
+            setInnerText('discount',discountPrice);
+            setInnerText('grand-total',grandTotal)
+        //    return discountPrice
+        } else if(coupon==="Couple 20"){
+            const discountPrice=totalPrice*0.20;
+            let grandTotal=totalPrice-discountPrice;
+           
+            setInnerText('discount',discountPrice);
+            setInnerText('grand-total',grandTotal)
+            
+        //    return discountPrice
+        }
+        else{
+            return alert ("invalid coupon code")
+        }
+       const hide=document.getElementById('hide');
+       hide.setAttribute('hidden',true)
+    })
+
+    // const phone=parseInt(document.getElementById('phone-need').value)
+    // console.log(typeof phone)
+    // const nextBtn=document.getElementById('next');
+    // if(phone==="number"){
+    //     nextBtn.removeAttribute('Disabled')
+    // }
+    
+   
    
     function setInnerText(id,value){
         document.getElementById(id).innerText=value
