@@ -34,7 +34,10 @@ function hideElementDisplay(){
             let totalTicketPrice=parseInt(document.getElementById('total-ticket-price').innerText)
            
             totalTicketPrice=totalTicketPrice+perTicketPrice;
-            setInnerText('total-ticket-price',totalTicketPrice)
+            setInnerText('total-ticket-price',totalTicketPrice);
+            const grandTotal=parseInt(document.getElementById('grand-total').innerText);
+            setInnerText('grand-total',totalTicketPrice)
+
         })
        
     }
@@ -70,13 +73,14 @@ function hideElementDisplay(){
        hide.setAttribute('hidden',true)
     })
 
-    // const phone=parseInt(document.getElementById('phone-need').value)
-    // console.log(typeof phone)
-    // const nextBtn=document.getElementById('next');
-    // if(phone==="number"){
+   
+   
+    // const nextBtn=document.getElementById('dis');
+    // if(phoned==="number"){
     //     nextBtn.removeAttribute('Disabled')
     // }
     
+
    
    
     function setInnerText(id,value){
@@ -84,3 +88,8 @@ function hideElementDisplay(){
     }
     
     // btn.setAttribute('Disabled')
+
+    const phoned=document.getElementById('phone-need').value;
+    phoned.addEventListener('keyup',function(){
+        console.log(phoned)
+    })
